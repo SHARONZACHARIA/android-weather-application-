@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sharonzacharia.weatherapp.MainActivity"
+    android:background="#fcfcfc">
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/app_bar_layout"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+   <android.support.design.widget.CollapsingToolbarLayout
+       android:id="@+id/collap"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+       app:layout_scrollFlags="exitUntilCollapsed|scroll"
+       app:contentScrim="@android:color/holo_blue_dark"
+       app:title="London"
+       app:expandedTitleMarginStart="8dp"
+       app:expandedTitleMarginEnd="8dp"
+       android:background="@drawable/wall2">
+
+
+
+       <android.support.v7.widget.Toolbar
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           app:layout_collapseMode="parallax">
+
+       </android.support.v7.widget.Toolbar>
+
+
+
+
+ </android.support.design.widget.CollapsingToolbarLayout>
+
+
+</android.support.design.widget.AppBarLayout>
+
+
+
+
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="32dp"
+        android:background="#fcfcfc">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp"
+        android:id="@+id/caedtemp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:id="@+id/TextTEmperature"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="4dp"
+                android:background="@color/colorPrimaryDark"
+                android:padding="4dp"
+                android:gravity="center"
+                android:text="TEMPERATURE"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/TextTEmperature"
+                android:layout_centerInParent="true"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="...."
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/weather1"
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="#fffc54"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardhumdity"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+
+        android:layout_below="@id/caedtemp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/humidty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textHumidity"
+        android:layout_margin="8dp"
+        android:padding="4dp"
+        android:text="...."
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textHumidity"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="4dp"
+        android:gravity="center"
+        android:text="HUMIDITY"
+        android:textColor="#FFFFFF" />
+
+
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        app:srcCompat="@drawable/humid1" />
+
+</RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardpressure"
+        android:layout_below="@id/cardhumdity"
+        app:cardElevation="8dp"
+        android:layout_margin="8dp">
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <TextView
+             android:id="@+id/pressure"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/textPressure"
+             android:layout_margin="8dp"
+             android:padding="4dp"
+             android:text="...."
+             android:textSize="30sp"
+             android:textStyle="bold" />
+
+
+         <TextView
+             android:id="@+id/textPressure"
+             android:layout_width="200dp"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentTop="true"
+             android:layout_margin="4dp"
+             android:background="@color/colorPrimaryDark"
+             android:padding="4dp"
+             android:gravity="center"
+             android:text=" ATMOSPHERIC PRESSURE"
+             android:textColor="#FFFFFF" />
+
+
+         <ImageView
+             android:layout_width="70dp"
+             android:layout_height="70dp"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentRight="true"
+             android:layout_margin="8dp"
+             android:scaleType="fitXY"
+             app:srcCompat="@drawable/measure" />
+
+     </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/extras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardpressure"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/precetext1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="4dp"
+        android:gravity="center"
+        android:text="PRECIPITATION "
+        android:textColor="#FFF"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/precetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@id/precetext1"
+        android:layout_toRightOf="@id/precetext"
+        android:text="...."
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/windSpedtext1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/precetext1"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="4dp"
+        android:gravity="center"
+        android:text="WIND SPEED "
+
+        android:textColor="#fff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/windSpedtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/precetext"
+        android:layout_alignStart="@+id/precetext"
+        android:layout_centerVertical="true"
+        android:text="...."
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/feelsLiketext1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/windSpedtext1"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="4dp"
+        android:text="FEELS LIKE "
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/feelsLiketext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/windSpedtext"
+        android:layout_alignStart="@+id/windSpedtext"
+        android:layout_alignTop="@+id/feelsLiketext1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:gravity="center"
+        android:lineSpacingExtra="18sp"
+        android:text="...."
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/weather"
+        android:scaleType="fitXY"
+        android:layout_margin="4dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/extras"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/detailsview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="4dp"
+                    android:background="#FFF5842E"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="DETAILS "
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/chanceRainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailsview"
+                    android:layout_margin="4dp"
+                    android:padding="4dp"
+                    android:text="CONDITION"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/chanceRainValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailsview"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/chanceRainText"
+                    android:layout_toRightOf="@id/chanceRainText"
+                    android:padding="4dp"
+                    android:text=":("
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/cloudText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chanceRainText"
+                    android:layout_margin="4dp"
+                    android:padding="4dp"
+                    android:text="CLOUDS "
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cloudTextValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chanceRainText"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/cloudText"
+                    android:layout_toRightOf="@id/cloudText"
+                    android:padding="4dp"
+                    android:text=":("
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/winddegreeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cloudText"
+                    android:layout_margin="4dp"
+                    android:padding="4dp"
+                    android:text="WIND DEGREE"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/winddegreeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cloudText"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/winddegreeText"
+                    android:layout_toRightOf="@id/winddegreeText"
+                    android:padding="4dp"
+                    android:text=":("
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/city_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/winddegreeValue"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp"
+                    android:text="location not detected"
+                    android:textColor="#000"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/lastUpdated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/city_info"
+                    android:layout_centerHorizontal="true"
+                    android:padding="4dp"
+                    android:text="last updated on  : ------"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+</android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/location1"
+        app:backgroundTint="@android:color/holo_blue_bright"
+        app:elevation="16dp"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="end|bottom" />
+
+</android.support.design.widget.CoordinatorLayout>
